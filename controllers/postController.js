@@ -20,6 +20,8 @@ const posts = {
 
     try {
       const { body } = req;
+      const UserIsValid = mongoose.Types.ObjectId.isValid(body.user);
+      if (!UserIsValid)  throw { message: '無效的 user'}
       if (!body.content) throw { message: '請填寫內容' };
       const newPost = await Post.create({
         user: body.user,
@@ -55,6 +57,8 @@ const posts = {
     const id = req.params.id;
     try {
       const postData = req.body;
+      const UserIsValid = mongoose.Types.ObjectId.isValid(body.user);
+      if (!UserIsValid)  throw { message: '無效的 user'}
       if (!postData.content) throw { message: "未填寫內容" }
       const updatePost = await Post.findByIdAndUpdate(id, postData, { runValidators: true });
       if (updatePost === null) throw { message: "查無ID" };
