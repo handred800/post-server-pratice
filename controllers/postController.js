@@ -1,3 +1,4 @@
+const mongoose = require('mongoose');
 const Post = require("../models/post");
 const User = require('../models/user')
 const { successHandler, errorHandler } = require('../service/responseHandler');
@@ -44,6 +45,8 @@ const posts = {
   async deletePost(req, res) {
     const id = req.params.id;
     try {
+      const idIsValid = mongoose.Types.ObjectId.isValid(id);
+      if (!idIsValid)  throw { message: '無效的ID'}
       const deletePost = await Post.findByIdAndDelete(id);
       if (deletePost === null) throw { message: "查無ID" }
       const allPosts = await Post.find();
@@ -56,16 +59,17 @@ const posts = {
   async updatePost(req, res) {
     const id = req.params.id;
     try {
-      const postData = req.body;
-      const UserIsValid = mongoose.Types.ObjectId.isValid(body.user);
-      if (!UserIsValid)  throw { message: '無效的 user'}
-      if (!postData.content) throw { message: "未填寫內容" }
-      const updatePost = await Post.findByIdAndUpdate(id, postData, { runValidators: true });
+      const { body } = req;
+      const idIsValid = mongoose.Types.ObjectId.isValid(id);
+      if (!idIsValid)  throw { message: '無效的ID'}
+      if (!body.content) throw { message: "未填寫內容" }
+      const updatePost = await Post.findByIdAndUpdate(id, body, { runValidators: true });
       if (updatePost === null) throw { message: "查無ID" };
       const allPosts = await Post.find();
       successHandler(res, allPosts);
     }
     catch (error) {
+      console.log(error);
       errorHandler(res, error)
     }
   },
