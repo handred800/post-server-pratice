@@ -12,6 +12,7 @@ const posts = {
         .populate({ path: 'user', select: 'name photo' });
       successHandler(res, allPosts);
     } catch (error) {
+      console.log(error)
       errorHandler(res, error);
     }
   },

@@ -11,9 +11,8 @@ const postSchema = new mongoose.Schema(
   {
     user: {
       type: mongoose.Schema.ObjectId,
-      ref: 'user',
+      ref: 'User',
       required: [true, 'user ID 必填'],
-      cast: false
     },
     image: {
       type: String,
