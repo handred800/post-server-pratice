@@ -3,8 +3,11 @@ const router = express.Router();
 const post = require('../controllers/postController');
 
 
-/* GET users listing. */
-router.get('/', post.getPosts);
-router.delete('/', post.deleteAllPosts);
+router.post('/post/', post.createPost);
+router.delete('/post/:id', post.deletePost);
+router.patch('/post/:id', post.updatePost);
+
+router.get('/posts/', post.getPosts);
+router.delete('/posts/', post.deleteAllPosts);
 
 module.exports = router;

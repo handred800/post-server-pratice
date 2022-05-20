@@ -5,13 +5,10 @@ const logger = require('morgan');
 const dotenv = require('dotenv');
 const mongoose = require('mongoose');
 const cors = require('cors');
-const { successHandler, errorHandler } = require('./service/responseHandler');
 
 // router
-const indexRouter = require('./routes/index');
-const userRouter = require('./routes/user');
+const userRouter = require('./routes/users');
 const postsRouter = require('./routes/posts');
-const postRouter = require('./routes/post');
 
 // mongo DB 連線
 dotenv.config({ path: './config.env' });
@@ -30,9 +27,14 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 // router
-app.use('/', indexRouter);
-app.use('/user', userRouter);
-app.use('/posts', postsRouter);
-app.use('/post', postRouter);
+app.use(userRouter);
+app.use(postsRouter);
+
+app.use(function(req, res, next) {
+    res.status(404).json({
+        status: false,
+        message: '不存在的路由'
+    })
+})
 
 module.exports = app;
