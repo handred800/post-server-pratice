@@ -2,7 +2,8 @@
 	"info": {
 		"_postman_id": "8c26ef04-63ba-4ad1-a686-100a15c6c5dd",
 		"name": "express-pratice-heroku",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "11365538"
 	},
 	"item": [
 		{
@@ -41,7 +42,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"user\": \"627951dfb3f5629c5cb0cd53\",\r\n    \"content\":\"填上答案\"\r\n}",
+					"raw": "{\r\n    \"user\": \"627951dfb3f5629c5cb0cd53\",\r\n    \"content\":\"\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -102,7 +103,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"content\": \"早安\"\r\n}",
+					"raw": "{\r\n    \"user\": \"627951dfb3f5629c5cb0cd53\",\r\n    \"content\": \"早安\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -110,13 +111,13 @@
 					}
 				},
 				"url": {
-					"raw": "{{domain}}/post/6277e4bb4ecef482952e",
+					"raw": "{{domain}}/post/628e5aff5d4fe46dde19bb62",
 					"host": [
 						"{{domain}}"
 					],
 					"path": [
 						"post",
-						"6277e4bb4ecef482952e"
+						"628e5aff5d4fe46dde19bb62"
 					]
 				}
 			},

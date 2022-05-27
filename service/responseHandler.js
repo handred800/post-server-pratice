@@ -6,10 +6,11 @@ module.exports = {
         });
         res.end()
     },
-    errorHandler(res, error, statusCode = 400) {
+    errorHandler(res, error, statusCode = 400, stack) {
         res.status(statusCode).json({
             status: false,
             error,
+            stack
         });
         res.end();
     }
