@@ -42,7 +42,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"user\": \"627951dfb3f5629c5cb0cd53\",\r\n    \"content\":\"\"\r\n}",
+					"raw": "{\r\n    \"user\": \"627951dfb3f5629c5cb0cd53\",\r\n    \"content\":\"WEEE!\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -103,7 +103,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"user\": \"627951dfb3f5629c5cb0cd53\",\r\n    \"content\": \"早安\"\r\n}",
+					"raw": "{\r\n    \"user\": \"ww\",\r\n    \"content\": \"早安\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -118,6 +118,150 @@
 					"path": [
 						"post",
 						"628e5aff5d4fe46dde19bb62"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "sign up",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"687\",\r\n    \"email\": \"123@gmail.com\",\r\n    \"password\": \"!QAZ2wsx#EDC\",\r\n    \"confirmPassword\": \"!QAZ2wsx#EDC\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{domain}}/user/sign_up",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"user",
+						"sign_up"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "sign in",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"123@gmail.com\",\r\n    \"password\": \"!QAZ2wsx#EDC\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{domain}}/user/sign_in",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"user",
+						"sign_in"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get profile",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyYTQ3ZWNhYTkyMWY2NmI2ZjRiZGRiMiIsImlhdCI6MTY1NDk0ODc3MCwiZXhwIjoxNjU1MjA3OTcwfQ.epJb8yP41AhrNw37U4mRNO55hBZoiDG8kFm-URijR9s",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{domain}}/user/profile",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"user",
+						"profile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update profile",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyYTQ3ZWNhYTkyMWY2NmI2ZjRiZGRiMiIsImlhdCI6MTY1NDk0ODc3MCwiZXhwIjoxNjU1MjA3OTcwfQ.epJb8yP41AhrNw37U4mRNO55hBZoiDG8kFm-URijR9s",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"123456@gmail.com\",\r\n    \"name\": \"小天天\",\r\n    \"photo\": \"https://i.pravatar.cc/300?img=5566\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{domain}}/user/profile",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"user",
+						"profile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "reset password",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyYTQ3ZWNhYTkyMWY2NmI2ZjRiZGRiMiIsImlhdCI6MTY1NDk0ODc3MCwiZXhwIjoxNjU1MjA3OTcwfQ.epJb8yP41AhrNw37U4mRNO55hBZoiDG8kFm-URijR9s",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"password\": \"1qaz@WSX3edc\",\r\n    \"confirmPassword\": \"1qaz@WSX3edc\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{domain}}/user/resetPassword",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"user",
+						"resetPassword"
 					]
 				}
 			},
