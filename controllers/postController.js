@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const Post = require("../models/post");
 const User = require('../models/user')
-const { successHandler, errorHandler } = require('../service/responseHandler');
+const { successHandler } = require('../service/responseHandler');
 const appError = require('../service/appError');
 
 const posts = {

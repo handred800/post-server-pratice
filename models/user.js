@@ -13,13 +13,13 @@ const userSchema = new mongoose.Schema(
       cast: false,
       select: false
     },
-    // password: {
-    //   type: String,
-    //   required: [true, '密碼必填'],
-    //   minLength: 8,
-    //   cast: false,
-    //   select: false
-    // },
+    password: {
+      type: String,
+      required: [true, '密碼必填'],
+      minLength: 8,
+      cast: false,
+      select: false
+    },
     name: {
       type: String,
       required: [true, '暱稱必填'],
